@@ -1,8 +1,8 @@
 {
 	"folders": [
 		{
-			"path": "."
-		}
+			"path": ".",
+		},
 	],
 	"settings": {
 		"angular.enable-strict-mode-prompt": false,
@@ -13,9 +13,9 @@
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSaveMode": "file",
-		"terminal.explorerKind": "external"
+		"terminal.explorerKind": "external",
 	},
 	"extensions": {
-		"recommendations": ["yzhang.markdown-all-in-one", "esbenp.prettier-vscode"]
-	}
+		"recommendations": ["yzhang.markdown-all-in-one", "esbenp.prettier-vscode"],
+	},
 }
