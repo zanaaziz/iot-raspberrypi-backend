@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTemperatureDto } from './dto/create-temperature.dto';
-import { UpdateTemperatureDto } from './dto/update-temperature.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class TemperaturesService {
-  create(createTemperatureDto: CreateTemperatureDto) {
-    return 'This action adds a new temperature';
-  }
+	constructor(private readonly prisma: PrismaService) {}
 
-  findAll() {
-    return `This action returns all temperatures`;
-  }
+	create(data: CreateTemperatureDto) {
+		return this.prisma.temperature.create({ data });
+	}
 
-  findOne(id: number) {
-    return `This action returns a #${id} temperature`;
-  }
+	findAll() {
+		return this.prisma.temperature.findMany();
+	}
 
-  update(id: number, updateTemperatureDto: UpdateTemperatureDto) {
-    return `This action updates a #${id} temperature`;
-  }
+	//   findOne(id: number) {
+	//     return `This action returns a #${id} temperature`;
+	//   }
 
-  remove(id: number) {
-    return `This action removes a #${id} temperature`;
-  }
+	//   update(id: number, updateTemperatureDto: UpdateTemperatureDto) {
+	//     return `This action updates a #${id} temperature`;
+	//   }
+
+	//   remove(id: number) {
+	//     return `This action removes a #${id} temperature`;
+	//   }
 }
