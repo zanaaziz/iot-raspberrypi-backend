@@ -5,30 +5,30 @@ import { UpdateHumidityDto } from './dto/update-humidity.dto';
 
 @Controller('humidities')
 export class HumiditiesController {
-  constructor(private readonly humiditiesService: HumiditiesService) {}
+	constructor(private readonly humiditiesService: HumiditiesService) {}
 
-  @Post()
-  create(@Body() createHumidityDto: CreateHumidityDto) {
-    return this.humiditiesService.create(createHumidityDto);
-  }
+	@Post()
+	create(@Body() createHumidityDto: CreateHumidityDto) {
+		return this.humiditiesService.create(createHumidityDto);
+	}
 
-  @Get()
-  findAll() {
-    return this.humiditiesService.findAll();
-  }
+	@Get()
+	findAll() {
+		return this.humiditiesService.findAll();
+	}
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.humiditiesService.findOne(+id);
-  }
+	//   @Get(':id')
+	//   findOne(@Param('id') id: string) {
+	//     return this.humiditiesService.findOne(+id);
+	//   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateHumidityDto: UpdateHumidityDto) {
-    return this.humiditiesService.update(+id, updateHumidityDto);
-  }
+	//   @Patch(':id')
+	//   update(@Param('id') id: string, @Body() updateHumidityDto: UpdateHumidityDto) {
+	//     return this.humiditiesService.update(+id, updateHumidityDto);
+	//   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.humiditiesService.remove(+id);
-  }
+	//   @Delete(':id')
+	//   remove(@Param('id') id: string) {
+	//     return this.humiditiesService.remove(+id);
+	//   }
 }

@@ -1,26 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHumidityDto } from './dto/create-humidity.dto';
-import { UpdateHumidityDto } from './dto/update-humidity.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class HumiditiesService {
-  create(createHumidityDto: CreateHumidityDto) {
-    return 'This action adds a new humidity';
-  }
+	constructor(private readonly prisma: PrismaService) {}
 
-  findAll() {
-    return `This action returns all humidities`;
-  }
+	create(data: CreateHumidityDto) {
+		return this.prisma.humidity.create({ data });
+	}
 
-  findOne(id: number) {
-    return `This action returns a #${id} humidity`;
-  }
-
-  update(id: number, updateHumidityDto: UpdateHumidityDto) {
-    return `This action updates a #${id} humidity`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} humidity`;
-  }
+	findAll() {
+		return this.prisma.humidity.findMany();
+	}
 }
