@@ -11,7 +11,13 @@ export class TemperaturesService {
 	}
 
 	findAll() {
-		return this.prisma.temperature.findMany();
+		return this.prisma.temperature.findMany({
+			orderBy: [
+				{
+					createdAt: 'desc',
+				},
+			],
+		});
 	}
 
 	//   findOne(id: number) {

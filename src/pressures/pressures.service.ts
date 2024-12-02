@@ -11,6 +11,12 @@ export class PressuresService {
 	}
 
 	findAll() {
-		return this.prisma.pressure.findMany();
+		return this.prisma.pressure.findMany({
+			orderBy: [
+				{
+					createdAt: 'desc',
+				},
+			],
+		});
 	}
 }

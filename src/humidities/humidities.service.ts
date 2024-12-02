@@ -11,6 +11,12 @@ export class HumiditiesService {
 	}
 
 	findAll() {
-		return this.prisma.humidity.findMany();
+		return this.prisma.humidity.findMany({
+			orderBy: [
+				{
+					createdAt: 'desc',
+				},
+			],
+		});
 	}
 }
