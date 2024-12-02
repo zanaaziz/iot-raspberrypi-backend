@@ -1,26 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePressureDto } from './dto/create-pressure.dto';
-import { UpdatePressureDto } from './dto/update-pressure.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class PressuresService {
-  create(createPressureDto: CreatePressureDto) {
-    return 'This action adds a new pressure';
-  }
+	constructor(private readonly prisma: PrismaService) {}
 
-  findAll() {
-    return `This action returns all pressures`;
-  }
+	create(data: CreatePressureDto) {
+		return this.prisma.pressure.create({ data });
+	}
 
-  findOne(id: number) {
-    return `This action returns a #${id} pressure`;
-  }
-
-  update(id: number, updatePressureDto: UpdatePressureDto) {
-    return `This action updates a #${id} pressure`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} pressure`;
-  }
+	findAll() {
+		return this.prisma.pressure.findMany();
+	}
 }
