@@ -11,6 +11,8 @@ model Humidity {
   id         Int      @id @default(autoincrement())
   deviceId   String
   value      Decimal
+  latitude   Decimal
+  longitude  Decimal
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
@@ -19,6 +21,8 @@ model Pressure {
   id         Int      @id @default(autoincrement())
   deviceId   String
   value      Decimal
+  latitude   Decimal
+  longitude  Decimal
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
@@ -27,6 +31,8 @@ model Temperature {
   id         Int      @id @default(autoincrement())
   deviceId   String
   value      Decimal
+  latitude   Decimal
+  longitude  Decimal
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

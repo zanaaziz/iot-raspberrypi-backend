@@ -8,4 +8,12 @@ export class CreateHumidityDto {
 	@IsDecimal()
 	@IsNotEmpty()
 	value: number;
+
+	@IsDecimal()
+	@IsNotEmpty()
+	latitude: number;
+
+	@IsDecimal()
+	@IsNotEmpty()
+	longitude: number;
 }

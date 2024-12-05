@@ -8,4 +8,12 @@ export class CreateTemperatureDto {
 	@IsDecimal()
 	@IsNotEmpty()
 	value: number;
+
+	@IsDecimal()
+	@IsNotEmpty()
+	latitude: number;
+
+	@IsDecimal()
+	@IsNotEmpty()
+	longitude: number;
 }

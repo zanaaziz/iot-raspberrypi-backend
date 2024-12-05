@@ -3,6 +3,8 @@ CREATE TABLE "Humidity" (
     "id" SERIAL NOT NULL,
     "deviceId" TEXT NOT NULL,
     "value" DECIMAL(65,30) NOT NULL,
+    "latitude" DECIMAL(65,30) NOT NULL,
+    "longitude" DECIMAL(65,30) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -14,6 +16,8 @@ CREATE TABLE "Pressure" (
     "id" SERIAL NOT NULL,
     "deviceId" TEXT NOT NULL,
     "value" DECIMAL(65,30) NOT NULL,
+    "latitude" DECIMAL(65,30) NOT NULL,
+    "longitude" DECIMAL(65,30) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -25,6 +29,8 @@ CREATE TABLE "Temperature" (
     "id" SERIAL NOT NULL,
     "deviceId" TEXT NOT NULL,
     "value" DECIMAL(65,30) NOT NULL,
+    "latitude" DECIMAL(65,30) NOT NULL,
+    "longitude" DECIMAL(65,30) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
